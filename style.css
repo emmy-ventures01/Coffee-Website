@@ -1,37 +1,10 @@
 /* =========================================================
-EMBER & BEAN
-MAIN STYLESHEET
+EMBER & BEAN — STYLE.CSS
 ========================================================= */
 
-/* =========================
-ROOT VARIABLES
-========================= */
-
-:root {
---espresso: #24150e;
---dark-brown: #352015;
---coffee: #5b3824;
---roast: #754a2e;
---caramel: #b97845;
-
---cream: #f6eee4;
---latte: #ead8c4;
---sand: #d9bea3;
-
---white: #fffaf5;
---text: #302017;
---muted: #765f4e;
-
---border: rgba(91, 56, 36, 0.18);
---shadow: 0 20px 50px rgba(36, 21, 14, 0.12);
-
---transition: 0.3s ease;
-
-}
-
-/* =========================
-RESET
-========================= */
+/* -------------------------
+RESET & GLOBAL
+------------------------- */
 
 * {
   margin: 0;
@@ -45,200 +18,214 @@ scroll-behavior: smooth;
 
 body {
 font-family: "Poppins", sans-serif;
-background: var(--cream);
-color: var(--text);
+background: #f5ede3;
+color: #2a1a12;
 line-height: 1.7;
+overflow-x: hidden;
 }
 
 img {
-width: 100%;
 display: block;
+width: 100%;
 }
 
 a {
-color: inherit;
 text-decoration: none;
+color: inherit;
 }
 
 button,
 input,
 select,
 textarea {
-font: inherit;
+font-family: inherit;
 }
 
-/* =========================
+/* -------------------------
+COLOURS
+------------------------- */
+
+:root {
+--dark: #24150e;
+--brown: #3b2417;
+--coffee: #5a3824;
+--accent: #b97845;
+--cream: #f5ede3;
+--light: #fffaf5;
+--muted: #796354;
+--border: rgba(90, 56, 36, 0.18);
+}
+
+/* -------------------------
 GENERAL
-========================= */
+------------------------- */
 
 .section {
-padding: 110px 7%;
+padding: 100px 7%;
 }
 
 .section-tag {
-color: var(--caramel);
-font-size: 0.75rem;
+margin-bottom: 16px;
+color: var(--accent);
+font-size: 12px;
 font-weight: 600;
-letter-spacing: 0.2em;
-margin-bottom: 18px;
+letter-spacing: 3px;
 }
 
 .section-heading {
-max-width: 720px;
-margin: 0 auto 60px;
+max-width: 750px;
+margin: 0 auto 55px;
 text-align: center;
 }
 
 .section-heading h2,
 .about-content h2,
 .story-content h2,
-.philosophy h2,
 .contact-intro h2 {
+color: var(--dark);
 font-family: "Playfair Display", serif;
-font-size: clamp(2.3rem, 5vw, 4rem);
-line-height: 1.15;
-font-weight: 600;
-color: var(--espresso);
+font-size: clamp(38px, 5vw, 65px);
+line-height: 1.1;
 }
 
 .section-heading h2 span,
 .about-content h2 span,
 .story-content h2 span,
-.philosophy h2 span,
-.experience-content h2 span,
-.about-experience-content h2 span,
-.about-message-content h2 span,
-.cta-content h2 span,
-.contact-cta-content h2 span {
-color: var(--caramel);
+.contact-intro h2 span {
+color: var(--accent);
 }
 
-.section-heading p:last-child {
+.section-heading > p:last-child {
 margin-top: 20px;
 color: var(--muted);
 }
 
-/* =========================
+/* -------------------------
 NAVIGATION
-========================= */
+------------------------- */
 
 .header {
 position: absolute;
 top: 0;
 left: 0;
+z-index: 1000;
 width: 100%;
-z-index: 100;
 }
 
 .navbar {
-width: 86%;
+width: 88%;
 max-width: 1400px;
-margin: 25px auto;
+margin: 24px auto;
+
+padding: 16px 24px;
 
 display: flex;
 align-items: center;
 justify-content: space-between;
 
-padding: 18px 25px;
+background: rgba(36, 21, 14, 0.88);
+backdrop-filter: blur(14px);
 
-background: rgba(36, 21, 14, 0.82);
-backdrop-filter: blur(15px);
-
-border: 1px solid rgba(255, 255, 255, 0.1);
-border-radius: 60px;
+border: 1px solid rgba(255, 255, 255, 0.12);
+border-radius: 50px;
 
 }
 
 .logo {
-color: var(--white);
+color: #fffaf5;
 font-family: "Playfair Display", serif;
-font-size: 1.25rem;
+font-size: 21px;
 font-weight: 700;
-letter-spacing: 0.08em;
+letter-spacing: 1px;
 }
 
 .logo span {
-color: var(--caramel);
+color: var(--accent);
 }
 
 .nav-links {
 display: flex;
 align-items: center;
-gap: 35px;
+gap: 32px;
 list-style: none;
 }
 
 .nav-links a {
 color: rgba(255, 250, 245, 0.85);
-font-size: 0.9rem;
-transition: var(--transition);
+font-size: 14px;
+transition: 0.3s ease;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-color: var(--caramel);
+color: var(--accent);
 }
 
 .nav-button {
 padding: 11px 20px;
-background: var(--caramel);
-color: var(--white);
+
+background: var(--accent);
+color: #fff;
+
 border-radius: 30px;
-font-size: 0.82rem;
+
+font-size: 13px;
 font-weight: 600;
-transition: var(--transition);
+
+transition: 0.3s ease;
+
 }
 
 .nav-button:hover {
+background: #8f552f;
 transform: translateY(-2px);
-background: var(--roast);
 }
 
-/* =========================
+/* -------------------------
 BUTTONS
-========================= */
+------------------------- */
 
 .btn {
+min-height: 52px;
+padding: 0 28px;
+
 display: inline-flex;
 align-items: center;
 justify-content: center;
 
-min-height: 52px;
-padding: 0 28px;
-
 border-radius: 4px;
 
-font-size: 0.82rem;
+font-size: 13px;
 font-weight: 600;
-letter-spacing: 0.04em;
+letter-spacing: 0.5px;
 
-transition: var(--transition);
+transition: 0.3s ease;
 
 }
 
 .btn-primary {
-background: var(--caramel);
-color: var(--white);
+background: var(--accent);
+color: #fff;
 }
 
 .btn-primary:hover {
-background: var(--roast);
+background: #8f552f;
 transform: translateY(-3px);
 }
 
 .btn-outline {
-border: 1px solid rgba(255, 250, 245, 0.5);
-color: var(--white);
+border: 1px solid rgba(255, 255, 255, 0.55);
+color: #fff;
 }
 
 .btn-outline:hover {
-background: var(--white);
-color: var(--espresso);
+background: #fffaf5;
+color: var(--dark);
 }
 
 .btn-dark {
-background: var(--espresso);
-color: var(--white);
+background: var(--dark);
+color: #fff;
 }
 
 .btn-dark:hover {
@@ -246,93 +233,77 @@ background: var(--coffee);
 transform: translateY(-3px);
 }
 
-.text-link {
-display: inline-block;
-margin-top: 25px;
+/* =========================================================
+HOME PAGE
+========================================================= */
 
-color: var(--coffee);
-
-font-size: 0.85rem;
-font-weight: 600;
-
-border-bottom: 1px solid var(--caramel);
-padding-bottom: 4px;
-
-transition: var(--transition);
-
-}
-
-.text-link:hover {
-color: var(--caramel);
-}
-
-/* =========================
-HOME HERO
-========================= */
+/* -------------------------
+HERO
+------------------------- */
 
 .hero {
 min-height: 100vh;
 
-position: relative;
-
 display: flex;
 align-items: center;
+
+position: relative;
 
 background:
     linear-gradient(
         90deg,
-        rgba(24, 13, 8, 0.92),
-        rgba(24, 13, 8, 0.55),
-        rgba(24, 13, 8, 0.2)
+        rgba(25, 13, 7, 0.94),
+        rgba(25, 13, 7, 0.63),
+        rgba(25, 13, 7, 0.22)
     ),
-    url("../images/hero-coffee.jpg") center/cover no-repeat;
+    url("../images/hero-coffee.jpg") center center / cover no-repeat;
 
 }
 
 .hero-content {
+width: 86%;
+max-width: 1400px;
+margin: 0 auto;
+padding-top: 80px;
+
 position: relative;
 z-index: 2;
 
-width: 86%;
-max-width: 1400px;
-
-margin: 0 auto;
-padding-top: 70px;
-
-color: var(--white);
+color: #fff;
 
 }
 
 .hero-tag {
-color: var(--caramel);
-font-size: 0.75rem;
-font-weight: 600;
-letter-spacing: 0.2em;
 margin-bottom: 20px;
+
+color: var(--accent);
+
+font-size: 12px;
+font-weight: 600;
+letter-spacing: 3px;
+
 }
 
 .hero h1 {
-max-width: 800px;
+max-width: 850px;
 
 font-family: "Playfair Display", serif;
-
-font-size: clamp(3.3rem, 7vw, 6.8rem);
-
+font-size: clamp(55px, 8vw, 105px);
 line-height: 0.98;
 font-weight: 600;
 
 }
 
 .hero h1 span {
-color: var(--caramel);
+color: var(--accent);
 }
 
 .hero-text {
-max-width: 570px;
+max-width: 580px;
 margin: 30px 0;
 
 color: rgba(255, 250, 245, 0.78);
-font-size: 1rem;
+font-size: 16px;
 
 }
 
@@ -342,9 +313,9 @@ gap: 15px;
 flex-wrap: wrap;
 }
 
-/* =========================
-ABOUT PREVIEW
-========================= */
+/* -------------------------
+HOME ABOUT
+------------------------- */
 
 .about-preview {
 display: grid;
@@ -352,7 +323,7 @@ grid-template-columns: 1fr 1fr;
 gap: 80px;
 align-items: center;
 
-background: var(--white);
+background: var(--light);
 
 }
 
@@ -373,16 +344,37 @@ overflow: hidden;
 .about-image img {
 height: 100%;
 object-fit: cover;
-transition: transform 0.7s ease;
+transition: 0.7s ease;
 }
 
 .about-image:hover img {
 transform: scale(1.04);
 }
 
-/* =========================
+.text-link {
+display: inline-block;
+
+margin-top: 25px;
+padding-bottom: 4px;
+
+border-bottom: 1px solid var(--accent);
+
+color: var(--coffee);
+
+font-size: 14px;
+font-weight: 600;
+
+transition: 0.3s ease;
+
+}
+
+.text-link:hover {
+color: var(--accent);
+}
+
+/* -------------------------
 FEATURED COFFEE
-========================= */
+------------------------- */
 
 .featured {
 background: var(--cream);
@@ -399,11 +391,11 @@ gap: 25px;
 }
 
 .coffee-card {
-background: var(--white);
 overflow: hidden;
-box-shadow: var(--shadow);
+background: var(--light);
+box-shadow: 0 20px 50px rgba(36, 21, 14, 0.12);
 
-transition: var(--transition);
+transition: 0.3s ease;
 
 }
 
@@ -419,7 +411,7 @@ overflow: hidden;
 .coffee-image img {
 height: 100%;
 object-fit: cover;
-transition: transform 0.6s ease;
+transition: 0.6s ease;
 }
 
 .coffee-card:hover .coffee-image img {
@@ -432,87 +424,93 @@ padding: 25px;
 
 .coffee-title {
 display: flex;
-align-items: center;
 justify-content: space-between;
 gap: 15px;
 }
 
 .coffee-title h3 {
 font-family: "Playfair Display", serif;
-font-size: 1.45rem;
-color: var(--espresso);
+font-size: 22px;
 }
 
 .coffee-title span {
-color: var(--caramel);
+color: var(--accent);
 font-weight: 600;
-white-space: nowrap;
 }
 
 .coffee-info p {
-margin-top: 10px;
+margin-top: 8px;
 color: var(--muted);
-font-size: 0.88rem;
+font-size: 14px;
 }
 
 .section-button {
-text-align: center;
 margin-top: 50px;
+text-align: center;
 }
 
-/* =========================
+/* -------------------------
 EXPERIENCE
-========================= */
+------------------------- */
 
-.experience {
+.experience,
+.about-experience {
 display: grid;
 grid-template-columns: 1fr 1fr;
 
 min-height: 650px;
 
-background: var(--espresso);
-color: var(--white);
+background: var(--dark);
+color: #fff;
 
 }
 
-.experience-content {
+.experience-content,
+.about-experience-content {
+padding: 90px 10%;
+
 display: flex;
 flex-direction: column;
 justify-content: center;
-
-padding: 90px 10%;
 
 }
 
 .experience-content h2,
 .about-experience-content h2 {
 font-family: "Playfair Display", serif;
-font-size: clamp(2.4rem, 5vw, 4.5rem);
+font-size: clamp(40px, 5vw, 70px);
 line-height: 1.05;
+}
+
+.experience-content h2 span,
+.about-experience-content h2 span {
+color: var(--accent);
 }
 
 .experience-content p:not(.section-tag),
 .about-experience-content p:not(.section-tag) {
 max-width: 520px;
 margin: 25px 0;
-color: rgba(255, 250, 245, 0.7);
+color: rgba(255, 250, 245, 0.72);
 }
 
-.experience-image {
+.experience-image,
+.about-experience-image {
 min-height: 500px;
 }
 
-.experience-image img {
+.experience-image img,
+.about-experience-image img {
 height: 100%;
 object-fit: cover;
 }
 
-/* =========================
+/* -------------------------
 WHY US
-========================= */
+------------------------- */
 
 .why-us {
-background: var(--white);
+background: var(--light);
 }
 
 .features-grid {
@@ -532,30 +530,28 @@ border-top: 1px solid var(--border);
 
 .feature-number,
 .coffee-number {
-color: var(--caramel);
-
-font-size: 0.75rem;
+color: var(--accent);
+font-size: 12px;
 font-weight: 600;
-letter-spacing: 0.15em;
-
+letter-spacing: 2px;
 }
 
 .feature h3 {
 margin: 20px 0 10px;
 
 font-family: "Playfair Display", serif;
-font-size: 1.6rem;
+font-size: 24px;
 
 }
 
 .feature p {
 color: var(--muted);
-font-size: 0.88rem;
+font-size: 14px;
 }
 
-/* =========================
-GENERAL CTA
-========================= */
+/* -------------------------
+CTA
+------------------------- */
 
 .cta,
 .menu-cta,
@@ -563,22 +559,22 @@ GENERAL CTA
 .contact-cta {
 min-height: 500px;
 
+padding: 80px 7%;
+
 display: flex;
 align-items: center;
 justify-content: center;
 
 text-align: center;
 
-padding: 80px 7%;
+color: #fff;
 
 background:
     linear-gradient(
-        rgba(36, 21, 14, 0.88),
-        rgba(36, 21, 14, 0.88)
+        rgba(36, 21, 14, 0.89),
+        rgba(36, 21, 14, 0.89)
     ),
-    url("../images/hero-coffee.jpg") center/cover no-repeat;
-
-color: var(--white);
+    url("../images/hero-coffee.jpg") center / cover no-repeat;
 
 }
 
@@ -586,13 +582,13 @@ color: var(--white);
 .menu-cta p,
 .about-message-content p,
 .contact-cta-content p {
-color: var(--caramel);
-
-font-size: 0.72rem;
-font-weight: 600;
-letter-spacing: 0.2em;
-
 margin-bottom: 18px;
+
+color: var(--accent);
+
+font-size: 11px;
+font-weight: 600;
+letter-spacing: 3px;
 
 }
 
@@ -600,16 +596,20 @@ margin-bottom: 18px;
 .menu-cta h2,
 .about-message-content h2,
 .contact-cta-content h2 {
-max-width: 850px;
-
+max-width: 900px;
 margin-bottom: 35px;
 
 font-family: "Playfair Display", serif;
-
-font-size: clamp(2.8rem, 6vw, 5.5rem);
-
+font-size: clamp(45px, 6vw, 80px);
 line-height: 1.05;
 
+}
+
+.cta-content h2 span,
+.menu-cta h2 span,
+.about-message-content h2 span,
+.contact-cta-content h2 span {
+color: var(--accent);
 }
 
 /* =========================================================
@@ -621,21 +621,19 @@ MENU PAGE
 .contact-hero {
 min-height: 75vh;
 
+padding: 160px 7% 90px;
+
 display: flex;
 align-items: flex-end;
 
-padding: 160px 7% 90px;
-
-position: relative;
-
-color: var(--white);
+color: #fff;
 
 background:
     linear-gradient(
-        rgba(36, 21, 14, 0.82),
+        rgba(36, 21, 14, 0.84),
         rgba(36, 21, 14, 0.72)
     ),
-    url("../images/hero-coffee.jpg") center/cover no-repeat;
+    url("../images/hero-coffee.jpg") center / cover no-repeat;
 
 }
 
@@ -648,13 +646,11 @@ max-width: 850px;
 .menu-hero h1,
 .about-hero h1,
 .contact-hero h1 {
-font-family: "Playfair Display", serif;
-
-font-size: clamp(3rem, 7vw, 6rem);
-
-line-height: 1;
-
 margin-bottom: 25px;
+
+font-family: "Playfair Display", serif;
+font-size: clamp(50px, 7vw, 95px);
+line-height: 1;
 
 }
 
@@ -662,7 +658,7 @@ margin-bottom: 25px;
 .about-hero h1 span,
 .contact-hero h1 span {
 display: block;
-color: var(--caramel);
+color: var(--accent);
 }
 
 .menu-hero-content > p:last-child,
@@ -672,16 +668,15 @@ max-width: 650px;
 color: rgba(255, 250, 245, 0.75);
 }
 
-/* =========================
+/* -------------------------
 MENU INTRO
-========================= */
+------------------------- */
 
 .menu-intro {
 max-width: 800px;
-
 margin: 0 auto;
 
-padding: 110px 7% 60px;
+padding: 100px 7% 60px;
 
 text-align: center;
 
@@ -689,15 +684,12 @@ text-align: center;
 
 .menu-intro h2 {
 font-family: "Playfair Display", serif;
-
-font-size: clamp(2.5rem, 5vw, 4rem);
-
+font-size: clamp(40px, 5vw, 65px);
 line-height: 1.1;
-
 }
 
 .menu-intro h2 span {
-color: var(--caramel);
+color: var(--accent);
 }
 
 .menu-intro > p:last-child {
@@ -705,9 +697,10 @@ margin-top: 20px;
 color: var(--muted);
 }
 
-/* =========================
-MENU GRID
-========================= */
+/* -------------------------
+MENU CARDS
+2 PER ROW
+------------------------- */
 
 .coffee-menu {
 padding: 40px 7% 110px;
@@ -716,25 +709,24 @@ background: var(--cream);
 
 .menu-grid {
 max-width: 1250px;
-
 margin: 0 auto;
 
 display: grid;
 
-grid-template-columns: repeat(2, 1fr);
+grid-template-columns: repeat(2, minmax(0, 1fr));
 
 gap: 35px;
 
 }
 
 .menu-card {
-background: var(--white);
-
-box-shadow: var(--shadow);
-
 overflow: hidden;
 
-transition: var(--transition);
+background: var(--light);
+
+box-shadow: 0 20px 50px rgba(36, 21, 14, 0.12);
+
+transition: 0.35s ease;
 
 }
 
@@ -743,15 +735,17 @@ transform: translateY(-8px);
 }
 
 .menu-image {
+width: 100%;
 height: 430px;
 overflow: hidden;
 }
 
 .menu-image img {
+width: 100%;
 height: 100%;
 object-fit: cover;
 
-transition: transform 0.7s ease;
+transition: 0.7s ease;
 
 }
 
@@ -766,41 +760,30 @@ padding: 30px 32px 35px;
 .menu-content h3 {
 margin: 12px 0;
 
+color: var(--dark);
+
 font-family: "Playfair Display", serif;
-
-font-size: 1.8rem;
-
-color: var(--espresso);
+font-size: 29px;
 
 }
 
 .menu-content p {
-max-width: 550px;
-
 color: var(--muted);
-
-font-size: 0.9rem;
-
+font-size: 14px;
 }
 
 /* =========================================================
 ABOUT PAGE
 ========================================================= */
 
-.about-hero {
-min-height: 75vh;
-}
-
 .our-story {
 display: grid;
-
 grid-template-columns: 1fr 1fr;
 
 gap: 80px;
-
 align-items: center;
 
-background: var(--white);
+background: var(--light);
 
 }
 
@@ -825,39 +808,34 @@ background: var(--cream);
 
 .philosophy-grid {
 max-width: 1200px;
-
 margin: 0 auto;
 
 display: grid;
-
 grid-template-columns: repeat(3, 1fr);
-
 gap: 30px;
 
 }
 
 .philosophy-card {
 padding: 40px;
-
-background: var(--white);
-
+background: var(--light);
 border: 1px solid var(--border);
 
-transition: var(--transition);
+transition: 0.3s ease;
 
 }
 
 .philosophy-card:hover {
 transform: translateY(-6px);
-box-shadow: var(--shadow);
+box-shadow: 0 20px 50px rgba(36, 21, 14, 0.12);
 }
 
 .philosophy-card > span {
-color: var(--caramel);
+color: var(--accent);
 
-font-size: 0.75rem;
+font-size: 12px;
 font-weight: 600;
-letter-spacing: 0.15em;
+letter-spacing: 2px;
 
 }
 
@@ -865,65 +843,27 @@ letter-spacing: 0.15em;
 margin: 22px 0 12px;
 
 font-family: "Playfair Display", serif;
-
-font-size: 1.55rem;
+font-size: 25px;
 
 }
 
 .philosophy-card p {
 color: var(--muted);
-font-size: 0.88rem;
-}
-
-.about-experience {
-display: grid;
-
-grid-template-columns: 1fr 1fr;
-
-min-height: 650px;
-
-background: var(--espresso);
-
-color: var(--white);
-
-}
-
-.about-experience-content {
-display: flex;
-
-flex-direction: column;
-
-justify-content: center;
-
-padding: 90px 10%;
-
-}
-
-.about-experience-image {
-min-height: 500px;
-}
-
-.about-experience-image img {
-height: 100%;
-object-fit: cover;
+font-size: 14px;
 }
 
 /* =========================================================
 CONTACT PAGE
 ========================================================= */
 
-.contact-hero {
-min-height: 70vh;
-}
-
 .contact-section {
 display: grid;
 
 grid-template-columns: 0.8fr 1.2fr;
 
-gap: 100px;
+gap: 90px;
 
-background: var(--white);
+background: var(--light);
 
 }
 
@@ -938,11 +878,8 @@ color: var(--muted);
 
 .contact-detail {
 margin-top: 35px;
-
 padding-top: 20px;
-
 border-top: 1px solid var(--border);
-
 }
 
 .contact-detail span {
@@ -950,13 +887,11 @@ display: block;
 
 margin-bottom: 5px;
 
-color: var(--caramel);
+color: var(--accent);
 
-font-size: 0.72rem;
+font-size: 11px;
 font-weight: 600;
-
-letter-spacing: 0.15em;
-
+letter-spacing: 2px;
 text-transform: uppercase;
 
 }
@@ -968,37 +903,28 @@ font-weight: 500;
 
 .contact-form-wrapper {
 padding: 50px;
-
 background: var(--cream);
 
-box-shadow: var(--shadow);
+box-shadow: 0 20px 50px rgba(36, 21, 14, 0.12);
 
 }
 
 .contact-form {
 display: flex;
-
 flex-direction: column;
-
 gap: 25px;
-
 }
 
 .form-group {
 display: flex;
-
 flex-direction: column;
-
 gap: 8px;
-
 }
 
 .form-group label {
-color: var(--espresso);
-
-font-size: 0.78rem;
+color: var(--dark);
+font-size: 13px;
 font-weight: 600;
-
 }
 
 .form-group input,
@@ -1009,51 +935,47 @@ width: 100%;
 padding: 16px 18px;
 
 border: 1px solid var(--border);
+border-radius: 2px;
 
 outline: none;
 
-background: var(--white);
+background: var(--light);
+color: var(--dark);
 
-color: var(--text);
-
-border-radius: 2px;
-
-transition: var(--transition);
+transition: 0.3s ease;
 
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-border-color: var(--caramel);
-
+border-color: var(--accent);
 box-shadow: 0 0 0 3px rgba(185, 120, 69, 0.1);
-
 }
 
 .form-group textarea {
-resize: vertical;
 min-height: 150px;
+resize: vertical;
 }
 
 .contact-form .btn {
+width: 100%;
 border: none;
 cursor: pointer;
-width: 100%;
 }
 
 /* =========================================================
-RESPONSIVE DESIGN
+TABLET
 ========================================================= */
 
 @media (max-width: 1000px) {
 
-.nav-links {
-    gap: 18px;
-}
-
 .navbar {
     width: 92%;
+}
+
+.nav-links {
+    gap: 18px;
 }
 
 .about-preview,
@@ -1079,14 +1001,14 @@ RESPONSIVE DESIGN
 
 .features-grid,
 .philosophy-grid {
-    grid-template-columns: 1fr 1fr;
-}
-
-.contact-form-wrapper {
-    padding: 35px;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 }
+
+/* =========================================================
+MOBILE
+========================================================= */
 
 @media (max-width: 700px) {
 
@@ -1094,30 +1016,32 @@ RESPONSIVE DESIGN
     padding: 75px 6%;
 }
 
-.header {
-    position: absolute;
-}
+
+/* NAVIGATION */
 
 .navbar {
     width: 92%;
-    padding: 15px 18px;
+    padding: 14px 17px;
 }
 
 .nav-links {
     display: none;
 }
 
-.nav-button {
-    padding: 9px 15px;
-    font-size: 0.72rem;
+.logo {
+    font-size: 17px;
 }
 
-.logo {
-    font-size: 1rem;
+.nav-button {
+    padding: 9px 14px;
+    font-size: 11px;
 }
+
+
+/* HERO */
 
 .hero {
-    min-height: 850px;
+    min-height: 820px;
 }
 
 .hero-content {
@@ -1126,31 +1050,30 @@ RESPONSIVE DESIGN
 }
 
 .hero h1 {
-    font-size: clamp(3rem, 14vw, 4.5rem);
+    font-size: clamp(50px, 14vw, 75px);
 }
 
 .hero-text {
-    font-size: 0.9rem;
+    font-size: 14px;
 }
 
 .hero-buttons {
     flex-direction: column;
-    align-items: flex-start;
 }
 
 .hero-buttons .btn {
     width: 100%;
 }
 
+
+/* HOME */
+
 .about-image,
 .story-image {
     height: 420px;
 }
 
-.coffee-grid,
-.menu-grid,
-.features-grid,
-.philosophy-grid {
+.coffee-grid {
     grid-template-columns: 1fr;
 }
 
@@ -1158,9 +1081,8 @@ RESPONSIVE DESIGN
     height: 300px;
 }
 
-.menu-image {
-    height: 330px;
-}
+
+/* PAGE HEROES */
 
 .menu-hero,
 .about-hero,
@@ -1172,12 +1094,37 @@ RESPONSIVE DESIGN
 .menu-hero h1,
 .about-hero h1,
 .contact-hero h1 {
-    font-size: clamp(3rem, 13vw, 4.5rem);
+    font-size: clamp(48px, 13vw, 70px);
 }
+
+
+/* MENU */
+
+.menu-grid {
+    grid-template-columns: 1fr;
+}
+
+.menu-image {
+    height: 330px;
+}
+
+
+/* ABOUT */
+
+.features-grid,
+.philosophy-grid {
+    grid-template-columns: 1fr;
+}
+
+
+/* CONTACT */
 
 .contact-form-wrapper {
     padding: 25px;
 }
+
+
+/* CTA */
 
 .cta,
 .menu-cta,
@@ -1187,4 +1134,4 @@ RESPONSIVE DESIGN
     padding: 70px 6%;
 }
 
-}
+  }
